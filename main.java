@@ -3,16 +3,16 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
-public class BogdanIonas { // <-- schimbă cu NumePrenume cerut
+public class Main {
 
-    // ======= CLASA Angajati (cerința 2 + 3) =======
+    
     static class Angajati {
         private String angNume;
         private double tarifOrar;
         private int oreLucrate;
         private double avansSalariu;
 
-        // constructor explicit cu 4 parametri
+       
         public Angajati(String angNume, double tarifOrar, int oreLucrate, double avansSalariu) {
             this.angNume = angNume;
             this.tarifOrar = tarifOrar;
@@ -32,7 +32,7 @@ public class BogdanIonas { // <-- schimbă cu NumePrenume cerut
         public double getAvans() { return avansSalariu; }
         public void setAvans(double avansSalariu) { this.avansSalariu = avansSalariu; }
 
-        // info completă pentru afișare
+        
         @Override
         public String toString() {
             double total = tarifOrar * oreLucrate;
@@ -42,7 +42,7 @@ public class BogdanIonas { // <-- schimbă cu NumePrenume cerut
         }
     }
 
-    // ======= UI + LOGICA (cerințele 4-8) =======
+    // ======= UI + LOGICA =======
     private Angajati curent;
 
     private DefaultListModel<Angajati> modelLista = new DefaultListModel<>();
@@ -61,7 +61,7 @@ public class BogdanIonas { // <-- schimbă cu NumePrenume cerut
     private JLabel lblInfo = new JLabel("Info completă: -");
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new BogdanIonas().porneste()); // <-- schimbă clasa dacă schimbi numele
+        SwingUtilities.invokeLater(() -> new Main().porneste()); // <-- schimbă clasa dacă schimbi numele
     }
 
     private void porneste() {
